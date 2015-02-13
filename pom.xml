@@ -6,7 +6,7 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <name>make</name>
-    <description>simplifies the description of project build processes</description>
+    <description>Just a URN class and a corresponding JAX-RS converter and validator</description>
 
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
