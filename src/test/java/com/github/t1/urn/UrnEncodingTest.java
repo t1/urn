@@ -1,41 +1,36 @@
 package com.github.t1.urn;
 
+import org.junit.jupiter.api.Test;
+
 import static com.github.t1.urn.UrnPrinter.*;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
-
-public class UrnEncodingTest {
-    @Test
-    public void shouldEncodeSimpleString() {
+class UrnEncodingTest {
+    @Test void shouldEncodeSimpleString() {
         String encoded = encodeNss("simple");
 
         assertEquals("simple", encoded);
     }
 
-    @Test
-    public void shouldEncodeSimpleHex() {
+    @Test void shouldEncodeSimpleHex() {
         String encoded = encodeNss(" ");
 
         assertEquals("%20", encoded);
     }
 
-    @Test
-    public void shouldEncodeEmbeddedHex() {
+    @Test void shouldEncodeEmbeddedHex() {
         String encoded = encodeNss("- -");
 
         assertEquals("-%20-", encoded);
     }
 
-    @Test
-    public void shouldEncodeThreeHex() {
+    @Test void shouldEncodeThreeHex() {
         String encoded = encodeNss("{ }");
 
         assertEquals("%7b%20%7d", encoded);
     }
 
-    @Test
-    public void shouldEncodeUmlaut() {
+    @Test void shouldEncodeUmlaut() {
         String encoded = encodeNss("äöü");
 
         assertEquals("%c3%a4%c3%b6%c3%bc", encoded);
